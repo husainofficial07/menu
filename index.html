@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Café Dubai</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"rel="stylesheet">
+  <script>
+  const toggleButton = document.getElementById("toggle-button");
+    const navDiv = document.getElementById("nav");
+    
+    toggleButton.addEventListener("click", () => {
+      navDiv.classList.toggle('active')
+    });
+    </script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@900&family=Playfair+Display:wght@900&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  overflow-x: hidden;
+  background-color: rgb(206, 169, 122);
+}
+
+#toggle-button {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  z-index: 2;
+}
+
+#toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: #ff4e4e;
+    border-radius: 10px;
+}
+
+#shopping-cart {
+  display: none;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  top: 1rem;
+  right: 1rem;
+  color: #ff4e4e;
+}
+
+#nav {
+  margin: 0;
+  padding: 0;
+  width: 15vw;
+  height: 100vh;
+  position: fixed;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+  background-color: rgb(150, 116, 73);
+}
+
+#navbar {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+ 
+}
+
+#navbar ul {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  overflow: auto;
+  text-align: center;
+}
+
+#navbar li {
+  margin: 0;
+  padding: 0;
+  font-size: 3vh;
+}
+
+#navbar h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 5vh;
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+}
+
+#navbar li a {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: black;
+}
+
+#navbar li button {
+  margin: 0;
+  padding: 1vh 2.5vw;
+  background-color: #ff4e4e;
+  border: 0;
+  color: white;
+  border-radius: 10vh;
+  font-size: 2.5vh;
+
+}
+
+#content {
+  margin: 0;
+  padding: 0;
+  width: 85vw;
+  height: 100vh;
+  min-height: 540px;
+  position: relative;
+  left: 15vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#content-top {
+  margin: 0;
+  padding: 0;
+}
+
+#content-top ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+
+#content-top li {
+  margin: 0;
+  padding: 0;
+}
+
+#content-top h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 5vw;
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+}
+
+#content-top p {
+  margin: 0;
+  padding: 0;
+  font-size: 1.5vw;
+}
+
+#content-top hr {
+  color: #ff4e4e;
+  max-width: 200px;
+}
+
+#content-bottom {
+  margin: 0;
+  padding: 0;
+}
+
+#content-bottom ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  overflow: auto;
+}
+
+#content-bottom li {
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.item-div {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  width: 150px;
+  height: 200px;
+  border-radius: 10%;
+  box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  background-color: rgb(252, 210, 157);
+}
+
+.item-image {
+  margin: 0;
+  padding: 0;
+  width: 125px;
+  height: 125px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.item-name {  margin: 0;
+  padding: 25px 0;
+  font-weight: 900;
+}
+.black-line {
+    border: none;
+    height: 2px; 
+    background-color:black;
+} 
+
+@media (max-width: 400px) {
+  #toggle-button {
+    display: flex;
+  }
+  
+  #shopping-cart {
+    display: flex;
+  }
+  
+  #nav {
+    display: none;
+  }
+  
+  #nav.active {
+    display: flex;
+    width: 50vw;
+  }
+  
+  #content {
+    left: 0;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+  }
+  
+  #content-top ul {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justift-content: space-around;
+  }
+  
+  #content-top h1 {
+    font-size: 10vw;
+  }
+  
+  #content-top p {
+    font-size: 5vw;
+  }
+}
+</style>
+</head>
+<body>
+
+<a href="#" id="toggle-button">
+  <span class="bar"></span>
+  <span class="bar"></span>
+  <span class="bar"></span>
+</a>
+
+
+</span>
+
+<div id="nav">
+  <nav id="navbar">
+    <ul>
+      <li><h1><b>Café<br>Dubai </b></h1></li>
+      <li><a href="CafeDubaiMenu.html">Menu</a></li>
+      <li><a href="AboutUs.html">About</a></li>
+      <li><a href="CafeDubaiContact.html">Contact</a></li>
+      <li><button type="button">Must Try!!</button></li>
+    </ul>
+  </nav>
+</div>
+
+<div id="content">
+  <div id="content-top">
+    <ul>
+      <li><h1>Hungry?<br>Let’s Fix That!"</h1></li>
+      <br>
+      <li><P><b> café serves fresh and tasty food,<br>
+        Every dish is crafted with great care,<br>
+        The flavors are rich and satisfying.<br></b>
+        </P>
+        <br>
+        <hr class="black-line">
+      </li>
+    </ul>
+  </div>
+  <div id="content-bottom">
+    <ul>
+      <li>
+        <div class="item-div">
+          <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?q=80&w=1473&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Sandwich" class="item-image">
+          <p class="item-name">Sandwich</p>
+        </div>
+      </li>
+      <li>
+        <div class="item-div">
+          <img src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Pizza" class="item-image">
+          <p class="item-name">Pizza</p>
+        </div>
+      </li>
+      <li>
+        <div class="item-div">
+          <img src="https://images.unsplash.com/photo-1611077855004-cc0614011bd8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="Chicken Burger" class="item-image">
+          <p class="item-name">Chicken Burger</p>
+        </div>
+      </li><br>
+      <li>
+        <div class="item-div">
+          <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Shakes" class="item-image">
+          <p class="item-name">Shakes</p>
+        </div>
+      </li>
+      </ul>
+      <ul>
+      <li>
+        <div class="item-div">
+          <img src="https://images.unsplash.com/photo-1541745038731-f1c2b5a1a49e?q=80&w=1526&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Mocktails" class="item-image">
+          <p class="item-name">Mocktails</p>
+        </div>
+      </li>
+      <li>
+        <div class="item-div">
+          <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?q=80&w=1442&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Tea" class="item-image">
+          <p class="item-name">Kadak Dubai Chai</p>
+        </div>
+      </li>
+      <li>
+        <div class="item-div">
+          <img src="https://images.arla.com/recordid/1F932F29-D891-44D9-9DF3DA1A2F32E050/kunafa.jpg?width=500&height=630&mode=max&format=webp" alt="Kunafa" class="item-image">
+          <p class="item-name">Kunafa</p>
+        </div>
+      </li>
+      <li>
+        <div class="item-div">
+          <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Ice Tea" class="item-image">
+          <p class="item-name">Ice Tea</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+</body>
+</html>
